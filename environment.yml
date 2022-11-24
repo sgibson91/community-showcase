@@ -1,14 +1,51 @@
-# This is the standard conda configuration file. Use this file to list
-# the conda packages that you need installed in your environment.
 channels:
   - conda-forge
 
 dependencies:
+  - python=3.10
   - jupyter_contrib_nbextensions==0.5.1
   # Required until https://github.com/jupyterhub/repo2docker/pull/1196 is merged
   - jupyterhub-singleuser>=3.0,<4.0
-  # Set default python version to 3.10 - repo2docker sets it to 3.7 instead by default,
-  # which can limit us to older package versions
-  - python=3.10
-  # Add other packages here
-  # -
+  # Required until https://github.com/jupyterhub/repo2docker/pull/1196 is merged
+  - jupyterhub-singleuser>=3.0,<4.0
+  # nbgitpuller is very helpful when distributing user content
+  - nbgitpuller
+  # Specify major version of jupyterlab to use. Manually bump it when you want to upgrade
+  # jupyterlab version
+  - jupyterlab>=3.0,<4.0
+  # This provides memory usage stats on JupyterLab and classic notebook
+  - jupyter-resource-usage
+  # https://syncthing.net/ provides a dropbox-like interface for syncing directories across users,
+  # hubs and machines. Used along with `jupyter-syncthing-proxy` from pip.
+  - syncthing
+  # gh-scoped-creds allows users to securely push to GitHub from their repo.
+  # https://blog.jupyter.org/securely-pushing-to-github-from-a-jupyterhub-3ee42dfdc54f has
+  # some more information
+  - gh-scoped-creds
+
+  # Cloud access tools and libraries
+  # Access S3 easily from python
+  - s3fs
+  # handle login and similar details for accessing earthdata protected data
+  # https://github.com/nsidc/earthaccess
+  - earthdata
+  # Access datasets exposed via STAC
+  - pystac-client
+
+  # Visualization packages
+  - matplotlib
+  - ipympl # This enables matplotlib interaction with jupyter widgets
+  - ipyleaflet
+
+  # Geospatial data packages
+  - rasterio
+  - rioxarray
+  - xarray-datatree
+
+  # Not all packages will be available from conda-forge, we install from pip when we need to.
+  - pip
+  - pip:
+      - jupyter-syncthing-proxy
+
+      # Access linux desktop from inside JupyterHub
+      - jupyter-desktop-server
