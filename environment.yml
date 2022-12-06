@@ -1,3 +1,5 @@
+name: researchdelight
+
 channels:
   - conda-forge
 
@@ -46,6 +48,5 @@ dependencies:
   - pip
   - pip:
       - jupyter-syncthing-proxy
-
       # Access linux desktop from inside JupyterHub
       - jupyter-desktop-server
