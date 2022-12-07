@@ -44,6 +44,9 @@ dependencies:
   - rioxarray
   - xarray-datatree
 
+  # needed for Linux desktop to work
+  - websockify>=0.10
+  
   # Not all packages will be available from conda-forge, we install from pip when we need to.
   - pip
   - pip:
