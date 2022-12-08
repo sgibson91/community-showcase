@@ -88,3 +88,5 @@ git-gui
 gitg
 qgit
 meld
+
+curl
