@@ -1,6 +1,6 @@
-# Research Delight Images
+# 2i2c Community Showcase
 
-This repository hosts configuration files for image environment used by the [researchdelight.2i2.cloud](researchdelight.2i2c.cloud) hub.
+This repo manages the images behind https://showcase.2i2c.cloud and supports Community of 2i2c Hub Champions using 2i2c infrastructure.
 
 ## About this repository :information_source:
 
