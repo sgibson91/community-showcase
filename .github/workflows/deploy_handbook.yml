@@ -14,6 +14,13 @@ jobs:
   # html files to the `gh-pages` branch
   build-and-deploy-book:
     runs-on: ubuntu-latest
+
+    # This job needs to commit changes to a branch, which requires write
+    # permissions to the content of the repo
+    # ref: https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v2
 
