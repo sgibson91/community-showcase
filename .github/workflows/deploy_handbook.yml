@@ -54,7 +54,7 @@ jobs:
       - name: GitHub Pages action
         # Only run this step if the event was a push, or if the deploy input
         # is true when running manually
-        if: ${{ github.event_name == 'push' || inputs.deploy == 'true' }}
+        if: github.event_name == 'push' || inputs.deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
