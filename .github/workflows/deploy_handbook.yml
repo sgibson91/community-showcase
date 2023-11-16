@@ -9,8 +9,9 @@ on:
     paths:
       - "handbook/**"
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+  # This job installs dependencies, builds the book, and pushes the generated
+  # html files to the `gh-pages` branch
   build-and-deploy-book:
     runs-on: ${{ matrix.os }}
     strategy:
