@@ -10,16 +10,6 @@ on:
       - "handbook/**"
   # Trigger the workflow manually
   workflow_dispatch:
-    # Provide an input so user can choose to deploy the book, or just build it
-    # (maybe to test the build)
-    inputs:
-      deploy:
-        description: >-
-          Uncheck this box if you only want to build the handbook, and NOT push
-          the HTML files to the gh-pages branch
-        required: false
-        default: true
-        type: boolean
 
 jobs:
   # This job installs dependencies, builds the book, and pushes the generated
@@ -52,9 +42,6 @@ jobs:
 
       # Deploy the book's HTML to gh-pages branch
       - name: GitHub Pages action
-        # Only run this step if the event was a push, or if the deploy input
-        # is true when running manually
-        if: ${{ github.event_name == 'push' || inputs.deploy == 'true' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
