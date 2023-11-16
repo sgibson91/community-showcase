@@ -1,39 +1,61 @@
-name: deploy
+name: Build and Deploy Handbook
 
 on:
-  # Trigger the workflow on push to main branch
+  # Trigger the workflow when changes in the handbook/ folder are pushed to the
+  # main branch
   push:
     branches:
       - main
+    paths:
+      - "handbook/**"
+  # Trigger the workflow manually
+  workflow_dispatch:
+    # Provide an input so user can choose to deploy the book, or just build it
+    # (maybe to test the build)
+    inputs:
+      deploy:
+        description: >-
+          Uncheck this box if you only want to build the handbook, and NOT push
+          the HTML files to the gh-pages branch
+        required: false
+        default: true
+        type: boolean
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+  # This job installs dependencies, builds the book, and pushes the generated
+  # html files to the `gh-pages` branch
   build-and-deploy-book:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [3.8]
+    runs-on: ubuntu-latest
+
+    # This job needs to commit changes to a branch, which requires write
+    # permissions to the content of the repo
+    # ref: https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+    permissions:
+      contents: write
+
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    # Install dependencies
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        pip install -r handbook/requirements.txt
+      # Install dependencies
+      - name: Set up Python v3.10
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          pip install -r handbook/requirements.txt
 
-    # Build the book
-    - name: Build the book
-      run: |
-        jupyter-book build handbook
+      # Build the book
+      - name: Build the book
+        run: |
+          jupyter-book build handbook
 
-    # Deploy the book's HTML to gh-pages branch
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: handbook/_build/html
+      # Deploy the book's HTML to gh-pages branch
+      - name: GitHub Pages action
+        # Only run this step if the event was a push, or if the deploy input
+        # is true when running manually
+        if: ${{ github.event_name == 'push' || inputs.deploy == 'true' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: handbook/_build/html
