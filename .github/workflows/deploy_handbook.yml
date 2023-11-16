@@ -1,10 +1,13 @@
 name: Build and Deploy Handbook
 
 on:
-  # Trigger the workflow on push to main branch
+  # Trigger the workflow when changes in the handbook/ folder are pushed to the
+  # main branch
   push:
     branches:
       - main
+    paths:
+      - "handbook/**"
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
