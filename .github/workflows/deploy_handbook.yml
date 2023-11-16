@@ -13,11 +13,7 @@ jobs:
   # This job installs dependencies, builds the book, and pushes the generated
   # html files to the `gh-pages` branch
   build-and-deploy-book:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [3.8]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
