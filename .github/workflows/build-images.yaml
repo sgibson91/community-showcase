@@ -1,0 +1,68 @@
+name: Build and push container images
+
+# Trigger this workflow on pushes to main branches under the images folder or
+# in PRs to the main branch that change the image folder
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "images/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "images/**"
+
+# When multiple PRs triggering this workflow are merged, queue them instead
+# of running them in parallel in case of clashes when pushing
+# https://github.blog/changelog/2021-04-19-github-actions-limit-workflow-run-or-job-concurrency/
+concurrency: image-build
+
+jobs:
+  # This job establishes from filepaths changed which images will be built by the
+  # next job
+  generate-build-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      images-to-build: ${{ env.images-to-build }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install script requirements
+        run: python -m pip install -r scripts/requirements.txt
+
+      - name: Identify files that have been added or modified
+        # Action repo: https://github.com/dorny/paths-filter
+        # Fork of the repo above that we use: https://github.com/frouioui/paths-filter/tree/main
+        # In order to take advantage of https://github.com/dorny/paths-filter/pull/133
+        uses: frouioui/paths-filter@main
+        id: changed-files
+        with:
+          token: ""
+          list-files: csv
+          filters: |
+            changed:
+              - added|modified: images/**
+
+      - name: Generate matrix jobs
+        run: |
+          python scripts/generate-image-build-matrix-jobs.py "${{ steps.changed-files.outputs.changed_files }}"
+
+  # This job will build the images identified by the previous job and optionally
+  # push them to container registry
+  build-and-push:
+    runs-on: ubuntu-latest
+    needs: [generate-build-matrix]
+    strategy:
+      matrix:
+        jobs: ${{ fromJson(needs.generate-build-matrix.outputs.images-to-build) }}
+    steps:
+      - run: |
+          echo "Building image: ${{ matrix.jobs.image-name }}"
