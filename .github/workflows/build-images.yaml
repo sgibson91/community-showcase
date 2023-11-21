@@ -93,6 +93,10 @@ jobs:
         #       can update the logic here later if needed.
         IMAGE_NAME: "2i2c/${{ matrix.jobs.image-name }}"
 
+        # Tell repo2docker which subdirectory to examine
+        # ref: https://repo2docker.readthedocs.io/en/latest/usage.html#cmdoption-jupyter-repo2docker-subdir
+        REPO2DOCKER_EXTRA_ARGS: "--subdir images/${{ matrix.jobs.image-name }}"
+
     # Lets us monitor disks getting full as images get bigger over time
     - name: Show how much disk space is left
       run: df -h
