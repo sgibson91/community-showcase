@@ -64,6 +64,8 @@ jobs:
       matrix:
         jobs: ${{ fromJson(needs.generate-build-matrix.outputs.images-to-build) }}
     steps:
+      - run: echo "${{ github.event_name == 'pull_request' }}"
+
     # For biggish images, github actions runs out of disk space.
     # So we cleanup some unwanted things in the disk image, and reclaim that space for our docker use
     # https://github.com/actions/virtual-environments/issues/2606#issuecomment-772683150
