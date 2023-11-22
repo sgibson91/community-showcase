@@ -101,7 +101,7 @@ jobs:
   
           # If the event that triggered this workflow was a pull request, the image
           # will be built but not pushed to the registry
-          NO_PUSH: "${{ github.event_name == 'pull_request' }}"
+          NO_PUSH: ${{ github.event_name == 'pull_request' }}
   
       # Lets us monitor disks getting full as images get bigger over time
       - name: Show how much disk space is left
