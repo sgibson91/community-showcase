@@ -5,3 +5,4 @@ jupyter-book
 jupyterlab-git 
 jupyterlab_myst
 jupyter-server-proxy
+gh-scoped-creds
