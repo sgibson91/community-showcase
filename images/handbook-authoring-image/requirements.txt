@@ -1,0 +1,7 @@
+jupyterlab==3
+numpy
+matplotlib
+jupyter-book
+jupyterlab-git 
+jupyterlab_myst
+jupyter-server-proxy
