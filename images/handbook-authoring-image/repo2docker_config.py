@@ -1,1 +1,0 @@
-c.Repo2Docker.base_image=jupyter/minimal-notebook
