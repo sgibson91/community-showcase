@@ -5,3 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: the-basic-elements
+- file: edit-handbook
