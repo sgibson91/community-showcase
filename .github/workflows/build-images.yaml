@@ -50,8 +50,9 @@ jobs:
         run: |
           python scripts/generate-image-build-matrix-jobs.py "${{ steps.changed-files.outputs.changed_files }}"
 
-  # This job will build the images identified by the previous job and optionally
-  # push them to container registry
+  # This job will build the images identified by the previous job and
+  # push them to container registry. We also upload an artifact containing the
+  # built image name to be used in another workflow for better discoverability.
   build-and-push:
     runs-on: ubuntu-latest
     needs: [generate-build-matrix]
@@ -73,6 +74,7 @@ jobs:
         uses: actions/checkout@v4
   
       - name: Build and conditionally push the image to quay.io
+        id: r2d-build
         uses: jupyterhub/repo2docker-action@master
         with:
           # Make sure username & password/token pair matches your registry credentials
@@ -95,3 +97,15 @@ jobs:
       # Lets us monitor disks getting full as images get bigger over time
       - name: Show how much disk space is left
         run: df -h
+
+      # Write the image name and tag to a file
+      - name: Write the image name and tag to a file
+        run: |
+          echo "${{ steps.r2d-build.outputs.IMAGE_SHA_NAME }}" > image-name.txt
+
+      # Upload file containing image name and tag as an artifact
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: "${{ matrix.jobs.image-name }}-image-name"
+          path: image-name.txt
