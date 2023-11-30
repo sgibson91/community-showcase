@@ -1,3 +1,5 @@
+# If changing this name, you MUST also update the trigger in comment-built-images-to-pr.yaml
+# https://github.com/2i2c-org/community-showcase/blob/HEAD/.github/workflows/comment-built-images-to-pr.yaml#L1
 name: Build and push container images
 
 # Trigger this workflow on pushes to main branches under the images folder or
