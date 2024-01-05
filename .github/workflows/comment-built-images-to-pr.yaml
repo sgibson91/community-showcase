@@ -1,0 +1,25 @@
+name: Comment built image names and tags to a PR
+
+on:
+  workflow_run:
+    workflows:
+      # This MUST match the 'name:' field of the target workflow
+      # https://github.com/2i2c-org/community-showcase/blob/HEAD/.github/workflows/build-images.yaml#L3
+      - "Build and push container images"
+    types:
+      - completed
+
+jobs:
+  comment-built-images-to-pr:
+    runs-on: ubuntu-latest
+    # Grant GITHUB_TOKEN enough permissions to read information about GitHub
+    # Actions and comment on PRs
+    permissions:
+      actions: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/comment-image-name-to-pr.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORKFLOW_RUN: ${{ github.event.workflow_run }}
