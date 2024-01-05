@@ -1,0 +1,30 @@
+name,description,research,education
+<p class='feature-header'>Authentication 🔍</p>,,,
+Access control,Hub administrators can [control over who has access to your hub](https://docs.2i2c.org/en/latest/admin/howto/manage-users.html),✔️,✔️
+GitHub Logon,Authenticate with a list of GitHub usernames,✔️,✔️
+Google OAuth logon,Authenticate with email addresses that use Google OAuthentication,✔️,✔️
+GitHub Teams Logon,Authenticate via membership in a GitHub Team that you control,✔️,
+<p class='feature-header'>User Environment ⚒️</p>,,,
+Custom user environment,Communities may [bring their own Docker images](https://docs.2i2c.org/en/latest/admin/howto/environment/index.html) for user environments.,✔️,✔️
+Host content in repositories,Use [nbgitpuller](https://jupyterhub.github.io/nbgitpuller/) to store content in online repositories and [distribute them to users with a click](https://docs.2i2c.org/en/latest/admin/howto/content.html),✔️,✔️
+Jupyter Interfaces,Jupyter Lab and Notebook interfaces are designed for interactive data science environments,✔️,✔️
+RStudio,RStudio is an integrated development environment (IDE) for R,✔️,✔️
+<p class='feature-header'>Configurable resources 📈</p>,,,
+User storage,Users have their own filesystem that persists between sessions.,up to 20GB,up to 20GB
+Configurable RAM,Configure the RAM available to users from the hub UI,2-64GB,1-4GB
+Configurable CPU,Configure the CPU available to users from the hub UI,2+ dedicated CPUs,1-2 shared CPUs
+Shared storage,Administrators can place files in a shared folder that all users may access.,up to 100GB,up to 100GB
+<p class='feature-header'>Cloud infrastructure ☁️</p>,,,
+Use commercial cloud,"Hubs can run on either AWS, GKE, or Azure",AWS/GKE/Azure,AWS/GKE/Azure
+Connect with cloud data,Access cloud-hosted [data from your hub](https://docs.2i2c.org/en/latest/admin/howto/data.html),✔️,
+Scalable Dask Clusters,Scale your computing with Dask Gateway clusters,✔️,
+Bring your own credits,Communities can run 2i2c Hubs on [*their* cloud accounts and projects.](https://docs.2i2c.org/en/latest/admin/howto/create-billing-account.html#),ask us,ask us
+<p class='feature-header'>Service Level 👷‍♀️</p>,,,
+Operations Support,2i2c provides a [dedicated support channel](https://docs.2i2c.org/en/latest/support.html) for all hubs,✔️,✔️
+Hub Uptime,"2i2c has a team of Hub Engineers that keep the infrastructure up-to-date, upgraded, and running smoothly",98%,98%
+User Privacy,"Hubs follow best practices in user privacy, and 2i2c retains no user data.",✔️,✔️
+Connect with communities,2i2c provides a communications channel in Slack for Community Representatives to connect with one another,✔️,✔️
+<p class='feature-header'>Open Source 💗</p>,,,
+Right to Replicate,Hubs are designed to be [replicable by anybody](https://2i2c.org/right-to-replicate) on their own infrastructure.,✔️,✔️
+Open Source Stack,Hubs are built entirely with open source and community-driven tooling,✔️,✔️
+Open Source Support,Hub fees fund open source engineers to do development and community work across the stack.,✔️,✔️
