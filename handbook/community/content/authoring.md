@@ -1,0 +1,2 @@
+(content/authoring)=
+# Authoring Content

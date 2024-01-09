@@ -44,7 +44,7 @@ Generate an [nbgitpuller link](https://jupyterhub.github.io/nbgitpuller/link). T
 5. A file to open when the link is clicked. When left empty, a directory
    listing with the content of the repository will be shown.
 
-```{figure} ../images/nbgitpuller-ui.png
+```{figure} ../../images/nbgitpuller-ui.png
 The [`nbgitpuller.link`](https://jupyterhub.github.io/nbgitpuller/link) user interface, along with
 some important fields highlighted.
 ```
@@ -125,7 +125,7 @@ This way, your HTML files will automatically be updated when you update your sit
 Your hub will need to be configured by a 2i2c engineer to enable the docs service (following {doc}`these instructions <infra:howto/features/static-sites>`).
 
 - Find the **GitHub repository** and the **branch** where your HTML files are stored.
-- [Send a support request](../../support.md) asking them to enable this, and provide the repository/branch you found above.
+- [Send a support request](../../admin/howto/support.md) asking them to enable this, and provide the repository/branch you found above.
 
 Once this is deployed, your hub's documentation should be accessible at
 
@@ -156,3 +156,5 @@ Make sure that you configure your `jupyterhub_url` to point to the URL of your
 2i2c JupyterHub (e.g., `https://<your-hub>.pilot.2i2c.cloud`).
 This will use automatically [create nbgitpuller links](content:nbgitpuller)
 for you.
+
+My link to [content authoring](content/authoring).
