@@ -156,5 +156,3 @@ Make sure that you configure your `jupyterhub_url` to point to the URL of your
 2i2c JupyterHub (e.g., `https://<your-hub>.pilot.2i2c.cloud`).
 This will use automatically [create nbgitpuller links](content:nbgitpuller)
 for you.
-
-My link to [content authoring](content/authoring).
