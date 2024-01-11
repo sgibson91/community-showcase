@@ -89,7 +89,7 @@ for artifact in filtered_artifacts:
         zip_ref.extractall(os.getcwd())
 
     # Read in file
-    with open(f"name.txt") as f:
+    with open(f"image-name.txt") as f:
         artifact_contents.append(f.read().strip("\n"))
 
 artifact_contents = "\n- ".join(artifact_contents)
