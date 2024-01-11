@@ -22,4 +22,4 @@ jobs:
       - run: python scripts/comment-image-name-to-pr.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WORKFLOW_RUN: "${{ github.event.workflow_run }}"
+          WORKFLOW_RUN: "${{ toJson(github.event.workflow_run) }}"
