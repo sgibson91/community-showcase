@@ -6,5 +6,5 @@ jupyterlab-iframe
 jupyterlab-git 
 jupyterlab_myst
 jupyter-server-proxy
-docutils==0.17.1
+docutils==0.17.1  # see https://jupyterbook.org/en/stable/content/citations.html?highlight=docutils#citations-and-bibliographies
 gh-scoped-creds
