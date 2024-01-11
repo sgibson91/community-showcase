@@ -6,4 +6,5 @@ jupyterlab-iframe
 jupyterlab-git 
 jupyterlab_myst
 jupyter-server-proxy
+docutils==0.17.1
 gh-scoped-creds
