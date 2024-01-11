@@ -1,10 +1,10 @@
 (content/authoring)=
-# Authoring Content using Jupyter Book
+# Author and Preview Content using Jupyter Book
 
 This guide shows you how to author and preview content using Jupyter Book within your 2i2c Managed JupyterHub Service.
 
 ```{note}
-A separate guide will follow describing how to deploy and publish Jupyter Book to a website. 
+This use case is currrently for authoring and previewing content on the Community Showcase Hub only. A separate guide will follow describing how to author, preview, deploy and publish Jupyter Book for other domains. 
 ```
 
 ## Set up Jupyter Book
@@ -85,14 +85,14 @@ For a definitive guide to structuring your Jupyter Book, including parts, sectio
 
 The content of your book can consist of the following file types:
 
-- Markdown `.md` – a type of markup language. Jupyter Book supports [MyST Markdown](https://mystmd.org/).
+- Markdown `.md` – a type of markup language. Jupyter Book supports [MyST Markdown](https://jupyterbook.org/en/stable/content/myst.html).
 - Jupyter notebook `.ipynb` – the standard computational notebook format.
 - MyST Markdown Notebooks `.md` – text-based Jupyter notebook written in MyST markdown.
 - reStructuredText `.rst` – a Sphinx-supported flavour of Markdown (see [How Jupyter Book and Sphinx relate to one another](https://jupyterbook.org/en/stable/explain/sphinx.html)).
 
 `````{admonition} Exercise
 :class: tip
-Try editing the sample files in the template folder to familiarise yourself with the different file types. If you are unfamiliar with MyST Markdown, then try formatting some text using this [guide](https://mystmd.org/guide/typography).
+Try editing the sample files in the template folder to familiarise yourself with the different file types. If you are unfamiliar with MyST Markdown, then try formatting some text using this [guide](https://jupyterbook.org/en/stable/reference/cheatsheet.html).
 `````
 
 ## Build and preview your Jupyter Book
@@ -118,10 +118,10 @@ $ cd  mynewbook/_build/html
 $ python -m http.server
 ```
 
-4. Preview your documentation website in an iFrame
+4. Preview your documentation website in an iFrame within JupyterLab
 
 ```{margin} Preview in your browser
-Alternatively, you can open the this URL directly in your browser to preview your documentation website.
+Alternatively, you can open this URL directly in your browser to preview your documentation website.
 ```
 
   - By clicking `View > Activate Command Palette` in the menu bar
@@ -140,4 +140,6 @@ If your book's Table of Contents doesn't update after changing the `_toc.yml` fi
 ```console
 $ jupyter-book build --all mybookname
 ```
+
+which rebuilds *all* files and not just modified files  only.
 ````
