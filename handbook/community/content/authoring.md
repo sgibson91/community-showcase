@@ -15,7 +15,7 @@ This use case is currrently for authoring and previewing content on the Communit
 We recommend minimal CPU resources since authoring content is not computationally intensive.
 ```
 
-![server-options](./images/server-options.png)
+![server-options](./media/server-options.png)
 
 2. Once your JupyterHub service has launched, open a `Terminal` from the launcher.
 
@@ -97,6 +97,10 @@ Try editing the sample files in the template folder to familiarise yourself with
 
 ## Build and preview your Jupyter Book
 
+:::{figure} ./media/build-and-preview.gif
+:width: 100%
+:::
+
 (step-1)=
 1. From a terminal, execute the command
 
@@ -109,7 +113,7 @@ to build your Jupyter Book, which generates HTML files from your content and pla
 2. Open a **new** terminal and navigate to the HTML folder using the command
 
 ```shell
-$ cd  mynewbook/_build/html
+$ cd mynewbook/_build/html
 ```
 
 3. Run a simple Python webserver with the command
