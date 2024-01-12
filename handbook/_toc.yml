@@ -3,3 +3,38 @@
 
 format: jb-book
 root: index
+parts:
+- caption: About the service
+  chapters:
+  - file: about/service/options
+  - file: about/service/index
+  - url: https://infrastructure.2i2c.org/reference/hubs/
+    title: See a table of our running hubs!
+- caption: Use the hub
+  chapters:
+  - file: user/topics/policy/index
+  - file: user/topics/data/index
+  - file: user/howto/specify-unlisted-image
+- caption: Administer the hub
+  chapters:
+  - file: admin/howto/support
+  - file: admin/howto/configurator
+  - file: admin/howto/environment/index
+  - file: admin/howto/manage-users
+  - file: admin/howto/control-user-server
+  - file: admin/topics/network
+- caption: Community leadership
+  chapters:
+  - file: community/events
+  - file: community/strategy
+  - file: community/content/authoring
+  - file: community/content/sharing
+- caption: Community representatives
+  chapters:
+  - file: admin/howto/new-hub
+  - file: admin/howto/replicate
+  - file: admin/howto/create-billing-account
+  - file: topic/cloud-costs
+- caption: Reference
+  chapters:
+  - file: reference/terminology
