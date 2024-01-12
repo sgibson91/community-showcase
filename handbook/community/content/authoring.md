@@ -1,5 +1,5 @@
 (content/authoring)=
-# Author and Preview Content using Jupyter Book
+# How do I Author and Preview Content using Jupyter Book?
 
 This guide shows you how to author and preview content using Jupyter Book within your 2i2c Managed JupyterHub Service.
 
@@ -56,9 +56,7 @@ copyright                   : "2024"  # Copyright year to be placed in the foote
 logo                        : "logo.png"  # A path to the book logo
 ```
 
-```{warning}
-Might want to talk about/link to version control here, since you can specify the remote-hosted repo in the `_config.yml` file.
-```
+<!-- JW: Might want to talk about/link to version control here, since you can specify the remote-hosted repo in the `_config.yml` file. -->
 
 ### Table of contents (`_toc.yml`)
 
@@ -135,6 +133,8 @@ Alternatively, you can open this URL directly in your browser to preview your do
   ```
   https://<your-hub-url>/user/<your-username>/proxy/8000/index.html
   ```
+
+### Edit and rebuild
 
 After editing content files in your Jupyter Book, you will need to re-build the HTML pages using the command from [Step 1](step-1), and then refresh your iFrame/website to preview your changes.
 
