@@ -28,8 +28,8 @@ $ jupyter-book create mynewbook
 to create a **template** for your Jupyter Book documentation. This creates a new folder called `mynewbook` in your home directory, which will appear in the file explorer to the left-hand side. The contents of this template folder is as follows:
 
 ```
-$ tree mybookname
-mybookname/
+$ tree mynewbook
+mynewbook/
 ├── _config.yml
 ├── _toc.yml
 ├── intro.md
@@ -142,7 +142,7 @@ After editing content files in your Jupyter Book, you will need to re-build the 
 If your book's Table of Contents doesn't update after changing the `_toc.yml` file, try:
 
 ```console
-$ jupyter-book build --all mybookname
+$ jupyter-book build --all mynewbook
 ```
 
 which rebuilds *all* files and not just modified files  only.
