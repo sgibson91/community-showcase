@@ -121,23 +121,15 @@ $ cd mynewbook/_build/html
 $ python -m http.server
 ```
 
-4. Preview your documentation website in an iFrame within JupyterLab
-
-```{margin} Preview in your browser
-Alternatively, you can open this URL directly in your browser to preview your documentation website.
-```
-
-  - By clicking `View > Activate Command Palette` in the menu bar
-  - Search for the `Open iFrame` command 
-  - Copy and paste the following URL (**edit as required**) into the `Open Site` textbox
+4. Preview your documentation website by opening the following URL in another tab in your browser to preview your documentation website.
   
-  ```
-  https://<your-hub-url>/user/<your-username>/proxy/8000/index.html
-  ```
+```
+https://<your-hub-url>/user/<your-username>/proxy/8000/index.html
+```
 
 ### Edit and rebuild
 
-After editing content files in your Jupyter Book, you will need to re-build the HTML pages using the command from [Step 1](step-1), and then refresh your iFrame/website to preview your changes.
+After editing content files in your Jupyter Book, you will need to re-build the HTML pages using the command from [Step 1](step-1), and then refresh the webpage to preview your changes.
 
 ````{tip}
 If your book's Table of Contents doesn't update after changing the `_toc.yml` file, try:
