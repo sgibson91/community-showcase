@@ -17,9 +17,9 @@ We recommend minimal CPU resources since authoring content is not computationall
 
 ![server-options](./media/server-options.png)
 
-2. Once your JupyterHub service has launched, open a `Terminal` from the launcher.
+2. Once your JupyterHub service has launched, open a **Terminal** from the launcher.
 
-3. In the terminal, use the command
+3. In the Terminal, use the command
 
 ```bash
 $ jupyter-book create mynewbook
@@ -55,9 +55,36 @@ copyright                   : "2024"  # Copyright year to be placed in the foote
 logo                        : "logo.png"  # A path to the book logo
 ```
 
-```{dropdown} Enabling extensions
-And here's my dropdown content
+````{dropdown} ⚡ Enable custom extensions
+Jupyter Book comes pre-configured with several Sphinx extensions, however you may wish to add your own custom extensions. To do so:
+
+1. View the list of available extensions by opening a Terminal and running
+```shell
+$ pip list
+...
+sphinxcontrib-applehelp       1.0.8
+sphinxcontrib-bibtex          2.5.0
+sphinxcontrib-devhelp         1.0.6
+sphinxcontrib-htmlhelp        2.0.5
+sphinxcontrib-jsmath          1.0.1
+sphinxcontrib-mermaid         0.9.2
+sphinxcontrib-qthelp          1.0.7
+sphinxcontrib-serializinghtml 1.1.10
 ```
+❗ Note that the list above is truncated.  
+
+If the extension you require is not in this list, then please contact your Hub Admin to request installation.  
+
+2. To enable the extension, open `_toc.yml` and add the following
+```yaml
+# Custom Sphinx extensions
+sphinx:
+  extra_extensions:
+  - sphinxcontrib.<extension-name>
+```
+
+For more information, see the [Jupyter Book docs – Custom Sphinx extensions](https://jupyterbook.org/en/stable/advanced/sphinx.html#custom-sphinx-extensions).
+````
 
 ### Table of contents (`_toc.yml`)
 
@@ -101,7 +128,7 @@ Try editing the sample files in the template folder to familiarise yourself with
 :::
 
 (step-1)=
-1. From a terminal, execute the command
+1. From a Terminal, execute the command
 
 ```shell
 $ jupyter-book build mynewbook
@@ -109,7 +136,7 @@ $ jupyter-book build mynewbook
 
 to build your Jupyter Book, which generates HTML files from your content and places them in the `mynewbook/_build/html/` folder.
 
-2. Open a **new** terminal and navigate to the HTML folder using the command
+2. Open a **new** Terminal and navigate to the HTML folder using the command
 
 ```shell
 $ cd mynewbook/_build/html
