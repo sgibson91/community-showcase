@@ -8,5 +8,6 @@ jupyterlab_myst
 jupyter-server-proxy
 ghp-import
 sphinxcontrib-mermaid
+sphinx-intl
 docutils==0.17.1  # see https://jupyterbook.org/en/stable/content/citations.html?highlight=docutils#citations-and-bibliographies
 gh-scoped-creds
