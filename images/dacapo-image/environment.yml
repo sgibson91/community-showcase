@@ -2,5 +2,7 @@ channels:
   - conda-forge
 
 dependencies:
+  - nbgitpuller
+
   - pip:
     - git+https://github.com/janelia-cellmap/dacapo
