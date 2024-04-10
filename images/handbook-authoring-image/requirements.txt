@@ -1,6 +1,7 @@
 docutils==0.17.1  # see https://jupyterbook.org/en/stable/content/citations.html?highlight=docutils#citations-and-bibliographies
 jupyter-book
-jupyterlab>=4.1.5
+jupyterhub>=4.1.5
+jupyterlab
 jupyterlab-iframe
 jupyterlab-git 
 jupyterlab_myst
