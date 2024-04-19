@@ -3,6 +3,8 @@ channels:
 
 dependencies:
   - nbgitpuller
+  - jupyter-server-proxy
+  - pip
 
   - pip:
     - git+https://github.com/janelia-cellmap/dacapo
