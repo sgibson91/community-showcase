@@ -13,6 +13,8 @@ dependencies:
   # https://blog.jupyter.org/securely-pushing-to-github-from-a-jupyterhub-3ee42dfdc54f has
   # some more information
   - gh-scoped-creds
+  # https://jupyter-ai.readthedocs.io/en/latest/
+  - jupyter-ai
   - flake8
 
   # Cloud access tools and libraries
