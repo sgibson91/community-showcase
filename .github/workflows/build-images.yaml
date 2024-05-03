@@ -85,7 +85,7 @@ jobs:
           DOCKER_REGISTRY: "quay.io"
   
           # Disable pushing a 'latest' tag, as this often just causes confusion
-          LATEST_TAG_OFF: true
+          LATEST_TAG_OFF: false
   
           # NOTE: This line assumes that the subfolder that contains the image has
           #       the same name as the image when it is pushed to the registry. We
