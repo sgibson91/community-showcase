@@ -15,6 +15,7 @@ dependencies:
   - gh-scoped-creds
   # https://jupyter-ai.readthedocs.io/en/latest/
   - jupyter-ai
+  - langchain-openai
   - flake8
 
   # Cloud access tools and libraries
