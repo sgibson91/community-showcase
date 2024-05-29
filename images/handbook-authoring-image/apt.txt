@@ -20,16 +20,16 @@ emacs-goodies-el
 # A couple of CLI editors that are easier than vim
 # micro  # currently not working on 18.04
 nano
-jed
-jed-extra
+# jed
+# jed-extra
 
 # powerful terminal-based file manager, better than the one in JLab
-mc
+# mc
 
 # for easily managing multiple repositories with one command (perl-doc
 # is needed for its help pages to work)
-mr
-perl-doc
+# mr
+# perl-doc
 
 # Regular build tools for compiling common stuff
 build-essential
@@ -47,7 +47,7 @@ pandoc
 latexdiff
 
 # Some useful git utilities use basic Ruby
-ruby
+# ruby
 
 # Other niceties for command-line work and life
 ack   # powerful grep-like tool
@@ -68,15 +68,15 @@ tree
 #fzf   # fuzzy file finder
 
 ## This section adds tools for desktop environment usage
-dbus-x11
-xorg
-xubuntu-icon-theme
-xfce4
-xfce4-goodies
-xclip
-xsel
-firefox
-chromium-browser
+#dbus-x11
+#xorg
+#xubuntu-icon-theme
+#xfce4
+#xfce4-goodies
+#xclip
+#xsel
+#firefox
+#chromium-browser
 
 # GUI text editors
 emacs
@@ -84,7 +84,7 @@ vim-gtk3
 gedit
 
 # Git clients and tools
-git-gui
-gitg
-qgit
-meld
+#git-gui
+#gitg
+#qgit
+#meld
