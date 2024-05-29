@@ -1,6 +1,5 @@
 docutils==0.17.1  # see https://jupyterbook.org/en/stable/content/citations.html?highlight=docutils#citations-and-bibliographies
 jupyter-book
-jupyterhub>=4.1.5
 jupyterlab
 jupyterlab-iframe
 jupyterlab-git 
@@ -13,6 +12,5 @@ matplotlib
 nbgitpuller>=1.2.1
 numpy
 nox
-sphinxcontrib-mermaid
 sphinxext-rediraffe
 sphinx-intl
