@@ -80,7 +80,7 @@ tree
 
 # GUI text editors
 emacs
-vim-gtk3
+#vim-gtk3
 gedit
 
 # Git clients and tools
