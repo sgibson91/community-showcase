@@ -1,9 +1,6 @@
 npm install -g mystmd
 
-jupyter labextension install jupyterlab_iframe@^0.2
-jupyter serverextension enable --py jupyterlab_iframe
-
 #config="c.JupyterLabIFrame.welcome = 'local://binder/landing.html'"
-config=""
+config="c.ContentsManager.allow_hidden = True"
 mkdir -p ~/.jupyter
 echo $config > ~/.jupyter/jupyter_notebook_config.py
