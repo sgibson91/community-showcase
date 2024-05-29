@@ -1,20 +1,9 @@
-name: researchdelight
-
 channels:
   - conda-forge
-
 dependencies:
-  - python=3.10
   - jupyter_contrib_nbextensions==0.5.1
-  # Required until https://github.com/jupyterhub/repo2docker/pull/1196 is merged
-  - jupyterhub-singleuser>=3.0,<4.0
-  # Required until https://github.com/jupyterhub/repo2docker/pull/1196 is merged
-  - jupyterhub-singleuser>=3.0,<4.0
   # nbgitpuller is very helpful when distributing user content
   - nbgitpuller
-  # Specify major version of jupyterlab to use. Manually bump it when you want to upgrade
-  # jupyterlab version
-  - jupyterlab>=3.0,<4.0
   # This provides memory usage stats on JupyterLab and classic notebook
   - jupyter-resource-usage
   # https://syncthing.net/ provides a dropbox-like interface for syncing directories across users,
@@ -24,6 +13,10 @@ dependencies:
   # https://blog.jupyter.org/securely-pushing-to-github-from-a-jupyterhub-3ee42dfdc54f has
   # some more information
   - gh-scoped-creds
+  # https://jupyter-ai.readthedocs.io/en/latest/
+  - jupyter-ai
+  - langchain-openai
+  - flake8
 
   # Cloud access tools and libraries
   # Access S3 easily from python
@@ -34,22 +27,11 @@ dependencies:
   # Access datasets exposed via STAC
   - pystac-client
 
-  # Visualization packages
-  - matplotlib
-  - ipympl # This enables matplotlib interaction with jupyter widgets
-  - ipyleaflet
-
-  # Geospatial data packages
-  - rasterio
-  - rioxarray
-  - xarray-datatree
-
-  # needed for Linux desktop to work
-  - websockify>=0.10
-  
   # Not all packages will be available from conda-forge, we install from pip when we need to.
   - pip
   - pip:
       - jupyter-syncthing-proxy
       # Access linux desktop from inside JupyterHub
       - jupyter-desktop-server
+      # enable myst
+      - jupyterlab_myst
