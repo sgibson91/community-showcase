@@ -1,7 +1,7 @@
 # 2i2c Community Showcase
 
 > [!NOTE]
-> This is not currently in use as we decide what kind of content should go here.
+> The community showcase handbook is not currently in use as we decide what kind of content should go here.
 > Instead, look at [the `docs/` repository](https://github.com/2i2c-org/docs) for learning and training content.
 
 This repo manages the images behind https://showcase.2i2c.cloud and supports Community of 2i2c Hub Champions using 2i2c infrastructure.
